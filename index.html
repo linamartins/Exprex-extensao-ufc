@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ExPrex - Projetos de Extensão</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img class="logo" src="img/EXPREX LOGO 1.png" alt="Logo ExPrex" />
+      <div class="header-right">
+        <button class="admin-button" id="open-admin-login">
+          Entrar como administrador
+        </button>
+
+        <div id="admin-options" class="admin-options hidden">
+          <button id="admin-greeting" class="admin-greeting">
+            Olá, Administrador
+          </button>
+          <div id="admin-menu-dropdown" class="admin-menu-dropdown hidden">
+            <button class="menu-button" id="btn-cadastrar">Cadastrar</button>
+            <button class="menu-button" id="btn-publicar-edital">
+              Publicar Edital
+            </button>
+            <button class="menu-button" id="btn-sair">Sair</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="desktop">
+      <main class="main-content">
+        <section class="search-section">
+          <form class="search-form" role="search">
+            <div class="search-bar">
+              <label for="search-input" class="visually-hidden"
+                >Pesquisar projetos</label
+              >
+              <input
+                type="search"
+                id="search-input"
+                class="search-input"
+                placeholder="Pesquisar"
+              />
+              <button type="submit" class="search-button">
+                <img
+                  src="img/search.png"
+                  alt="Ícone de pesquisa"
+                  class="search-icon"
+                />
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section class="projects-grid">
+          <div id="container-cards" class="container-cards"></div>
+        </section>
+      </main>
+    </div>
+
+    <div id="admin-login-modal" class="admin-modal hidden">
+      <div class="admin-content">
+        <button class="close-button">×</button>
+        <h2 class="admin-title">Portal do Administrador</h2>
+        <form class="admin-form" id="admin-login-form">
+          <p
+            id="admin-login-error"
+            style="color: red; text-align: center; margin-bottom: 10px"
+          ></p>
+          <label>Login</label>
+          <input type="email" placeholder="exemplo@gmail.com" required />
+          <label>Senha</label>
+          <input type="password" required />
+          <small><a href="#">Esqueceu sua senha?</a></small>
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="edital-modal" class="modal hidden">
+      <div class="modal-content">
+        <button class="modal-close-button">×</button>
+        <h2 id="modal-titulo" class="modal-title">Título do Edital</h2>
+
+        <div class="modal-info-grid">
+          <div class="info-item">
+            <h3>Orientador</h3>
+            <p id="modal-orientador"></p>
+          </div>
+          <div class="info-item">
+            <h3>Bolsista</h3>
+            <p id="modal-bolsista"></p>
+          </div>
+          <div class="info-item">
+            <h3>Vagas</h3>
+            <p id="modal-vagas"></p>
+          </div>
+          <div class="info-item">
+            <h3>Carga Horária</h3>
+            <p id="modal-carga-horaria"></p>
+          </div>
+          <div class="info-item">
+            <h3>Data de Publicação</h3>
+            <p id="modal-data-publicacao"></p>
+          </div>
+          <div class="info-item">
+            <h3>Período de Inscrição</h3>
+            <p id="modal-periodo-inscricao"></p>
+          </div>
+          <div class="info-item full-width">
+            <h3>Local</h3>
+            <p id="modal-localizacao"></p>
+          </div>
+        </div>
+
+        <div class="modal-section-box">
+          <h3>Objetivos</h3>
+          <p id="modal-objetivos"></p>
+        </div>
+
+        <div class="modal-section-box">
+          <h3>Descrição</h3>
+          <p id="modal-descricao"></p>
+        </div>
+
+        <div class="modal-actions">
+          <a
+            id="modal-download-link"
+            href="#"
+            class="modal-link-btn"
+            target="_blank"
+          >
+            Baixar Edital
+          </a>
+          <button id="modal-back-button" class="modal-back-btn">Voltar</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

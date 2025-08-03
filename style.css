@@ -1,0 +1,635 @@
+/* Importa a fonte Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: #4064b8;
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 40px;
+}
+
+.admin-button {
+  background-color: transparent;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.admin-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Layout Principal */
+.desktop {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.search-section {
+  padding: 2rem 0;
+}
+
+.search-form {
+  margin-bottom: 2rem;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search-input {
+  border: none;
+  padding: 1rem 1.5rem;
+  flex-grow: 1;
+  font-size: 1rem;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+/* Estilo para o placeholder do input */
+.search-input::placeholder {
+  color: #555;
+  font-weight: 500;
+}
+
+.search-button {
+  background-color: transparent;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #f0f0f0;
+}
+
+.search-icon {
+  height: 24px;
+  width: auto;
+  filter: brightness(0);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Modal de Login */
+.admin-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.admin-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.admin-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #1976d2;
+}
+
+.admin-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.admin-form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+}
+
+.admin-form .forgot-password-link {
+  display: block;
+  text-align: right;
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+  color: #1976d2;
+  font-size: 0.9rem;
+}
+
+.admin-form .forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+.admin-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Estilos para o menu de administrador logado */
+.admin-options {
+  position: relative;
+}
+
+.admin-greeting {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.admin-menu-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.admin-menu-dropdown.hidden {
+  display: none;
+}
+
+.admin-menu-dropdown .menu-button {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+.admin-menu-dropdown .menu-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Esconde o elemento .hidden */
+.hidden {
+  display: none !important;
+}
+
+/* ==================================== */
+/* === Estilos para os Cards e Modal de Detalhes === */
+/* ==================================== */
+.projects-grid {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.container-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1976d2;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  white-space: wrap;
+  text-overflow: ellipsis;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.card-info span:first-child {
+  font-weight: bold;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.card-location {
+  display: flex;
+  align-items: center;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.card-location img {
+  height: 16px;
+  width: 16px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Novo estilo compartilhado para o tamanho dos botões */
+.action-button {
+  padding: 0.5rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Estilos específicos de cor para cada botão */
+.card-link {
+  background-color: #1976d2;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+}
+
+.card-link:hover {
+  background-color: #0056b3;
+  text-decoration: none;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+/* Estilos do Modal de Detalhes */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+  transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-content {
+  transform: scale(1);
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+}
+
+.modal-close-button:hover {
+  color: #333;
+}
+
+.modal-title {
+  font-size: 2rem;
+  color: #1a4ea8;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.modal-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+  margin-bottom: 2rem;
+}
+
+.modal-info-grid .info-item h3 {
+  color: #1976d2;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.modal-info-grid .info-item p {
+  font-weight: normal;
+  color: #555;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.modal-info-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+.modal-section-box {
+  margin-bottom: 20px;
+}
+
+.modal-section-box h3 {
+  color: #1976d2;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.modal-section-box p {
+  color: #555;
+  font-size: 1rem;
+  white-space: pre-wrap;
+  padding-left: 20px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.modal-link-btn,
+.modal-back-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-link-btn {
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  display: inline-block;
+}
+
+.modal-link-btn:hover {
+  background-color: #0056b3;
+}
+
+.modal-back-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.modal-back-btn:hover {
+  background-color: #e0e0e0;
+}
+/* Estilos para Mensagens Personalizadas (Toast) */
+#custom-message-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.custom-message {
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+}
+
+.custom-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.custom-message.success {
+  background-color: #28a745;
+}
+
+.custom-message.error {
+  background-color: #dc3545;
+}
+
+.custom-message.info {
+  background-color: #17a2b8;
+}
+
+/* Estilos para o Modal de Confirmação (Personalizado) */
+.custom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.custom-modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.custom-modal-message {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.custom-modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.custom-modal-actions button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+#confirm-btn-yes {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+#confirm-btn-yes:hover {
+  background-color: #c82333;
+}
+
+#confirm-btn-no {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+#confirm-btn-no:hover {
+  background-color: #5a6268;
+}
+/* Mover a logo para a direita */
+.header .logo {
+  margin-left: 150px; /* Ajuste este valor (ex: 20px) para a distância desejada */
+}

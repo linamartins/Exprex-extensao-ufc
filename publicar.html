@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Publicar Edital</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f4f8;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 40px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+      }
+
+      h2 {
+        text-align: center;
+        color: #3a3d41;
+        margin-bottom: 30px;
+        font-size: 28px;
+      }
+
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .form-group {
+        flex: 1 1 45%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-group-full {
+        flex: 1 1 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: #333;
+      }
+
+      input,
+      textarea {
+        padding: 10px 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 15px;
+        background-color: #f9f9f9;
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .btn-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 30px;
+      }
+
+      .submit-btn,
+      .back-btn {
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 220px;
+      }
+
+      .submit-btn {
+        background-color: #2196f3;
+        color: #fff;
+      }
+
+      .submit-btn:hover {
+        background-color: #1976d2;
+      }
+
+      .back-btn {
+        background-color: #2196f3;
+        color: #fff;
+      }
+
+      .back-btn:hover {
+        background-color: #1976d2;
+      }
+
+      .success-modal {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #e3f2fd;
+        border-left: 6px solid #1976d2;
+        padding: 20px;
+        border-radius: 8px;
+        display: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+      }
+
+      .success-modal.show {
+        display: block;
+        animation: slideIn 0.3s ease-out;
+      }
+
+      .success-modal p {
+        margin-bottom: 10px;
+        color: #0d47a1;
+        font-weight: 600;
+      }
+
+      .success-modal button {
+        background-color: #2196f3;
+        color: #fff;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .success-modal button:hover {
+        background-color: #1976d2;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .form-group {
+          flex: 1 1 100%;
+        }
+
+        .submit-btn,
+        .back-btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Publicar Edital</h2>
+      <form id="editalForm" enctype="multipart/form-data">
+        <div class="form-group-full">
+          <label for="titulo">Título da Ação de Extensão *</label>
+          <input type="text" id="titulo" name="titulo" required />
+        </div>
+
+        <div class="form-group">
+          <label for="orientador">Orientador *</label>
+          <input type="text" id="orientador" name="orientador" required />
+        </div>
+
+        <div class="form-group">
+          <label for="dataPublicacao">Data de Publicação *</label>
+          <input
+            type="date"
+            id="dataPublicacao"
+            name="dataPublicacao"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="inscricoesAte">Inscrições até *</label>
+          <input type="date" id="inscricoesAte" name="inscricoesAte" required />
+        </div>
+
+        <div class="form-group">
+          <label for="localizacao">Localização *</label>
+          <input type="text" id="localizacao" name="localizacao" required />
+        </div>
+
+        <div class="form-group">
+          <label for="periodo">Período de Atuação *</label>
+          <input type="text" id="periodo" name="periodo" required />
+        </div>
+
+        <div class="form-group">
+          <label for="vagasRemuneradas">Vagas Remuneradas *</label>
+          <input
+            type="text"
+            id="vagasRemuneradas"
+            name="vagasRemuneradas"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="vagasVoluntarias">Vagas Voluntárias *</label>
+          <input
+            type="text"
+            id="vagasVoluntarias"
+            name="vagasVoluntarias"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="cursos">Cursos Contemplados *</label>
+          <input type="text" id="cursos" name="cursos" required />
+        </div>
+
+        <div class="form-group">
+          <label for="contato">Contato *</label>
+          <input type="text" id="contato" name="contato" required />
+        </div>
+
+        <div class="form-group-full">
+          <label for="descricao">Descrição *</label>
+          <textarea id="descricao" name="descricao" required></textarea>
+        </div>
+
+        <div class="form-group-full">
+          <label for="arquivoEdital">Upload do Edital (PDF) *</label>
+          <input
+            type="file"
+            id="arquivoEdital"
+            name="arquivoEdital"
+            accept=".pdf"
+            required
+          />
+        </div>
+
+        <div class="btn-group">
+          <button type="submit" class="submit-btn">Publicar Edital</button>
+          <button
+            type="button"
+            class="back-btn"
+            onclick="window.location.href='index.html'"
+          >
+            Voltar para página anterior
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="success-modal" id="modalSucesso">
+      <p>Edital publicado com sucesso!</p>
+      <button onclick="history.back()">Voltar</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

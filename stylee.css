@@ -1,0 +1,129 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: #f4f8fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 720px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  display: block;
+  margin-bottom: 10px;
+  max-width: 160px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2f3235;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #1a4ea8;
+  outline: none;
+}
+
+.submit-button {
+  width: 220px;
+  grid-column: 1 / -1;
+  justify-self: center;
+  padding: 14px;
+  margin-top: 20px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #1976d2;
+}
+
+.back-button {
+  width: 220px;
+  grid-column: 1 / -1;
+  justify-self: center;
+  padding: 14px;
+  margin-top: 10px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #1976d2;
+}
+
+.success-message {
+  grid-column: 1 / -1;
+  background-color: #d1ecf1;
+  color: #0c5460;
+  padding: 12px;
+  border: 1px solid #bee5eb;
+  border-radius: 6px;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 600;
+  display: none;
+}
