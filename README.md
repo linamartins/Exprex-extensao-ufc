@@ -55,7 +55,7 @@ Usamos o Express para criar o servidor e definir as rotas que gerenciam a busca,
 Usamos o Multer para processar os arquivos PDF enviados pelo formulário, pois ele garante que os arquivos sejam salvos corretamente na pasta `uploads`.
 - **Armazenamento de Dados**: Arquivo `db.json`
 Em vez de usar um banco de dados tradicional o projeto utiliza um arquivo JSON simples (`db.json`) para persistir e armazenar os dados dos editais. Ele funciona como o banco de dados do projeto.
-- **Frontend**: `Vanilla JavaScript` (JavaScript puro)
+- **Frontend**: `Vanilla JavaScript`
 Toda a lógica para abrir e fechar modais, carregar os cards e gerenciar os eventos de clique é feita com JavaScript puro.
 - **Autenticação**: Lógica de login manual
   é um processo simples onde o email e a senha são comparados a valores fixos no código do backend, sem o uso de tokens.
