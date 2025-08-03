@@ -58,7 +58,7 @@ Em vez de usar um banco de dados tradicional o projeto utiliza um arquivo JSON s
 - **Frontend**: `Vanilla JavaScript` (JavaScript puro)
 Toda a lógica para abrir e fechar modais, carregar os cards e gerenciar os eventos de clique é feita com JavaScript puro.
 - **Autenticação**: Lógica de login manual
- O login é um processo simples onde o email e a senha são comparados a valores fixos no código do backend, sem o uso de tokens.
+  é um processo simples onde o email e a senha são comparados a valores fixos no código do backend, sem o uso de tokens.
 
 ---
 
