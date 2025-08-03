@@ -54,7 +54,7 @@ O sistema foi projetado para apoiar a organização e a publicação dos editais
 - **Upload de arquivos**: `Multer`
   - **O que fazemos:** Usamos o Multer para processar os arquivos PDF enviados pelo formulário. Ele garante que os arquivos sejam salvos corretamente na pasta `uploads`.
 - **Armazenamento de Dados**: Arquivo `db.json`
-  - **O que fazemos:** Em vez de usar um banco de dados tradicional (como SQL ou NoSQL), o projeto utiliza um arquivo JSON simples (`db.json`) para persistir e armazenar os dados dos editais. Ele funciona como o banco de dados do projeto.
+  - **O que fazemos:** Em vez de usar um banco de dados tradicional o projeto utiliza um arquivo JSON simples (`db.json`) para persistir e armazenar os dados dos editais. Ele funciona como o banco de dados do projeto.
 - **Frontend**: `Vanilla JavaScript` (JavaScript puro)
   - **O que fazemos:** Toda a lógica para abrir e fechar modais, carregar os cards e gerenciar os eventos de clique é feita com JavaScript puro.
 - **Autenticação**: Lógica de login manual
