@@ -72,8 +72,8 @@ Certifique-se de ter o `Node.js` e o `npm` (gerenciador de pacotes do Node) inst
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git](https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git)
-    cd SEU_REPOSITORIO
+    git clone [https://github.com/linamartins/Exprex-extensao-ufc.git](https://github.com/linamartins/Exprex-extensao-ufc.git)
+    cd Exprex-extensao-ufc
     ```
 2.  **Instale as dependências:**
     ```bash
