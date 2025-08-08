@@ -272,6 +272,47 @@
       <button onclick="history.back()">Voltar</button>
     </div>
 
-    <script src="js/script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("editalForm");
+        const modalSucesso = document.getElementById("modalSucesso");
+        const backButton = modalSucesso.querySelector("button");
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const formData = new FormData(form);
+
+          try {
+            const response = await fetch("http://localhost:3000/editais/publicar", {
+              method: "POST",
+              body: formData,
+            });
+
+            if (response.ok) {
+              // Exibe o modal de sucesso e limpa o formulário
+              form.reset();
+              modalSucesso.classList.add("show");
+            } else {
+              const errorData = await response.json();
+              alert(
+                `Erro ao publicar o edital: ${
+                  errorData.error || response.statusText
+                }`
+              );
+            }
+          } catch (error) {
+            console.error("Erro na requisição:", error);
+            alert("Ocorreu um erro ao conectar com o servidor.");
+          }
+        }); // Garante que o modal de sucesso pode ser fechado
+
+        if (backButton) {
+          backButton.addEventListener("click", () => {
+            modalSucesso.classList.remove("show");
+          });
+        }
+      });
+    </script>
   </body>
 </html>
